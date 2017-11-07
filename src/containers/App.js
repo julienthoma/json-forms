@@ -1,26 +1,12 @@
-import React, { Component } from 'react';
-import ExampleComponent from '../components/ExampleComponent';
-import { connect } from 'react-redux';
-import { setText } from '../actions/ExampleActions';
+import React, { Component } from "react";
+import FieldSet from "./FieldSet";
+
+import { connect } from "react-redux";
 
 class App extends Component {
   render() {
-    const { someText } = this.props;
-
-    return (<ExampleComponent text={someText} handleClick={this.handleButtonClick} />)
-  }
-
-  handleButtonClick = () => {
-    const { dispatch } = this.props;
-
-    dispatch(setText(`Random Number: ${Math.random()}`));
+    return <FieldSet />;
   }
 }
 
-const mapStateToProps = state => ({
-  someText: state.text
-});
-
-const _App = connect(mapStateToProps)(App);
-
-export default _App;
+export default App;
